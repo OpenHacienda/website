@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'OpenHacienda',
-  tagline: 'Documentación no oficial sobre la AEAT',
+  tagline: 'Entender la AEAT no debería ser tan difícil',
   favicon: 'img/favicon.ico',
 
   url: 'https://openhacienda.github.io',

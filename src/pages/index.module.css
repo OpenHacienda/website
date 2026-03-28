@@ -1,19 +1,302 @@
-.heroBanner {
-  padding: 4rem 0;
+/* ── Hero ──────────────────────────────────────────────────────────────── */
+
+.hero {
+  padding: 7rem 0 5rem;
   text-align: center;
   position: relative;
   overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    #172554 0%,
+    #1e3a8a 40%,
+    #312e81 100%
+  );
+  color: #fff;
 }
 
-.buttons {
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M0 30h60M30 0v60' stroke='%23fff' stroke-width='0.5'/%3E%3C/svg%3E");
+  background-size: 60px 60px;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.heroEyebrow {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.heroTagline {
+  font-size: 1.4rem;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.heroDescription {
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  font-size: 1.1rem;
+  opacity: 0.8;
+  line-height: 1.7;
+}
+
+.heroButtons {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
 }
 
+.outlineButton {
+  background: transparent !important;
+  border: 2px solid rgba(255, 255, 255, 0.4) !important;
+  color: #fff !important;
+}
+
+.outlineButton:hover {
+  border-color: #fff !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #fff !important;
+}
+
+/* ── Stats Bar ─────────────────────────────────────────────────────────── */
+
+.statsBar {
+  background: #0f172a;
+  border-top: 1px solid rgba(96, 165, 250, 0.15);
+  border-bottom: 1px solid rgba(96, 165, 250, 0.15);
+  padding: 2rem 0;
+  color: #fff;
+}
+
+[data-theme='light'] .statsBar {
+  background: #1e3a8a;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.statNumber {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: var(--ifm-font-family-monospace);
+  color: var(--oh-accent-light, #f59e0b);
+}
+
+.statLabel {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+/* ── Mission ───────────────────────────────────────────────────────────── */
+
+.mission {
+  padding: 4rem 0;
+  position: relative;
+}
+
+.mission::before {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--ifm-color-primary), var(--oh-accent));
+  margin: 0 auto 2rem;
+  border-radius: 2px;
+}
+
+.missionText {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ── Sections ──────────────────────────────────────────────────────────── */
+
+.section {
+  padding: 3rem 0;
+}
+
+.sectionHeading {
+  margin-bottom: 1.5rem;
+}
+
+.sectionDivider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--ifm-color-primary-lighter),
+    transparent
+  );
+  border: none;
+  margin: 0;
+}
+
+/* ── Comparison Cards ──────────────────────────────────────────────────── */
+
+.comparisonSection {
+  padding: 2rem 0 3rem;
+}
+
+.cardNegative {
+  border-left: 3px solid #ef4444 !important;
+}
+
+.cardPositive {
+  border-left: 3px solid #22c55e !important;
+}
+
+[data-theme='dark'] .cardNegative,
+[data-theme='dark'] .cardPositive {
+  background: rgba(17, 24, 39, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ── Card Hover ────────────────────────────────────────────────────────── */
+
+.cardLift {
+  transition: transform 0.2s ease, border-color 0.15s, box-shadow 0.15s;
+}
+
+.cardLift:hover {
+  transform: translateY(-3px);
+}
+
+/* ── Contribute CTA ────────────────────────────────────────────────────── */
+
+.contributeCta {
+  padding: 4rem 0;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    rgba(29, 78, 216, 0.08) 0%,
+    rgba(217, 119, 6, 0.06) 100%
+  );
+  border-top: 1px solid var(--ifm-toc-border-color);
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+}
+
+[data-theme='dark'] .contributeCta {
+  background: linear-gradient(
+    135deg,
+    rgba(29, 78, 216, 0.12) 0%,
+    rgba(217, 119, 6, 0.08) 100%
+  );
+}
+
+.contributeCta p {
+  max-width: 550px;
+  margin: 1rem auto 2rem;
+  font-size: 1.1rem;
+}
+
+.contributeButtons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* ── Legal Disclaimer ──────────────────────────────────────────────────── */
+
+.disclaimer {
+  padding: 2rem 0 3rem;
+}
+
+/* ── Scroll Fade-In ────────────────────────────────────────────────────── */
+
+.fadeInOnScroll {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+  animation-timeline: view();
+  animation-range: entry 0% entry 30%;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@supports not (animation-timeline: view()) {
+  .fadeInOnScroll {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+/* ── Reduced Motion ────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .fadeInOnScroll {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .cardLift:hover {
+    transform: none;
+  }
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────── */
+
 @media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
+  .hero {
+    padding: 4rem 1.5rem 3rem;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .heroTagline {
+    font-size: 1.2rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .statNumber {
+    font-size: 2rem;
+  }
+
+  .heroButtons,
+  .contributeButtons {
+    flex-direction: column;
   }
 }
